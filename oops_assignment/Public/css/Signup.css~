@@ -1,0 +1,26 @@
+body {
+    background-image: url("/var/www/hamsika.com/public_html/html/oops_assignment/images/Background.jpeg");
+    background-size: 100% 100%;
+}
+img {
+    float: top-left;
+    margin: 10px 10px 10px 10px;
+}
+h1 {
+   text-align: center;
+   color: white;
+}
+div {
+    font-family: serif;
+    left: 120px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    width: 60%;
+    padding: 15px;
+    margin: auto;
+} 
+span {
+    color: red;
+}
+
+

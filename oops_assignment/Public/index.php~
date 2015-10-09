@@ -1,0 +1,42 @@
+<?php
+define ('DS', DIRECTORY_SEPARATOR);
+define ('HOME', dirname(__FILE__));
+
+ini_set ('display_errors', 1);
+
+require_once HOME . DS . 'config.php';
+
+function __autoload($class)
+{
+	if (file_exists(HOME . DS . 'models' . DS . strtolower($class) . '.php'))
+	{
+		require_once HOME . DS . 'models' . DS . strtolower($class) . '.php';
+	}
+	else if (file_exists(HOME . DS . 'controllers' . DS . strtolower($class) . '.php'))
+	{
+		require_once HOME . DS . 'controllers'  . DS . strtolower($class) . '.php';
+	}
+}
+
+if (isset($_GET['load']))
+{
+	$params = array();
+	$params = explode("/", $_GET['load']);
+
+	$controller = ucwords($params[0]);
+	
+	if (isset($params[1]) && !empty($params[1]))
+	{
+		$action = $params[1];
+	}
+	
+	if (isset($params[2]) && !empty($params[2]))
+	{
+		$query = $params[2];
+	}
+}
+
+$controller = new $controllers();
+$controller -> validate();
+$controller -> addUser();
+?>

@@ -1,0 +1,10 @@
+<?php
+	define( 'DB_HOST', '127.0.0.1');
+	define( 'DB_USER', 'root');
+	define( 'DB_PASSWORD', 'aspire@123');
+	define( 'DB_NAME', 'signup');
+	require_once "/var/www/hamsika.com/public_html/html/sample folder/OOPSAssignment/Application/Controllers/Signup.php";
+	require_once "/var/www/hamsika.com/public_html/html/sample folder/OOPSAssignment/Application/Controllers/User.php";
+	require_once "/var/www/hamsika.com/public_html/html/sample folder/OOPSAssignment/Application/Models/Database.php";
+	require_once "/var/www/hamsika.com/public_html/html/sample folder/OOPSAssignment/Application/Controllers/Logger.php"
+?>

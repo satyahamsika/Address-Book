@@ -1,0 +1,23 @@
+body {
+    background-image: url("../../images/Background.jpeg");
+    background-size: 500% 500%;
+}
+h1 {
+   text-align: center;
+   color: white;
+   background-color: black;
+   padding : 15px;
+}
+div {
+    font-family: serif;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    width: 60%;
+    padding: 15px;
+    margin: auto;
+}
+span {
+    color: red;
+}
+
+

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Register</title>
+        <meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
+        <meta content = "utf-8" http-equiv="encoding">
+        <link rel = "stylesheet" type = "text/css" media = "all" href = "../../Public/css/Signup.css"/>
+        <script src = "../../Public/js/common.js" type="application/javascript">
+        </script>
+        <script src = "../../Public/js/registration.js" type="application/javascript">
+        </script> 
+    </head>
+    <body>        
+        <br/>
+        <h1>Register</h1>
+        <div id = "color">
+            <form name = "registration" action = "Signup.php" method = "POST">
+                <p class = "ex">
+                    <p>Name<span>*</span>
+                        <input type = "text" name = "name" id = "name" onblur = "nameValidation()"><br/>
+                    </p>
+                    <p>Username<span>*</span>
+                        <input type = "text" name = "username" id = "uname" onblur = "userNameValidation()">
+                        <br/>
+                    </p>
+                    <p>Password<span>*</span>     
+                        <input type = "password" name = "password" id = "password" onblur = "passwordValidation()"><br/>
+                    </p>
+                    <p>Confirm Password<span>*</span>
+                        <input type = "password" name = "confirmpassword" id = "cpassword" onblur = "confirmPasswordValidation()">
+                    </p>                    
+                    <p>Gender<span>*</span>
+                        <input type = "radio" name = "gender" value = "male" onblur = "genValidation()">Male
+                        <input type = "radio" name = "gender" value = "female" onblur = "genValidation()">Female
+                    </p>
+                    <p>Mobile No.<span>*</span>                        
+                        <input type = "text" name = "mobno" id = "mobileno" maxlength = "10" onblur = "mobNoValidation()" />
+                    </p>                    
+                    <p>
+                        <input type = "submit"  value = "Submit" name = "submit"/>		
+                        <input type = "reset" name = "reset" value = "Reset"/>
+                    </p>
+                    <p><b>Note:</b><span>*</span> Indicates required fields.
+                    </p>
+                </p>   
+            </form>
+        </div>
+    </body>
+</html>
+

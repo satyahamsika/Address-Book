@@ -1,0 +1,18 @@
+body
+{
+	background-color: #f1f1f1;
+}
+h1
+{
+   text-align: center;
+   color: white;
+   background-color: black;
+   padding : 15px;
+}
+#section
+{
+   text-align: center;
+   color: white;
+   background-color: #f1f1f1;
+   padding : 15px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel = "stylesheet" type = "text/css" media = "all" href = "../../Public/css/SignupForm.css"/>
+	<script src = "../../Public/js/login.js" type="application/javascript">
+    </script>
+</head>
+<body>
+	<h1>Address Book</h1>
+	<table style="width:100%">
+	<tr><td><img src = "../../Public/images/download.jpg"></td>
+	<td>
+	<table id="login">
+	<tr>
+	<h2>Login</h2>
+	<form name = "login">
+		Username: <input type = 'text' name = 'username' id = 'username' onblur = "userNameValidation()"/>
+		<br/>
+		<br/>
+		Password: <input type = 'password' name = 'password' id = 'password' onblur = "passwordValidation()"/>
+		<br/>
+		<br/>
+		<input type = "submit"  value = "Submit" name = "submit"/>	&nbsp;	
+        <input type = "reset" name = "reset" value = "Reset"/>
+    </form>
+	</tr><br/><br/>
+	<tr><a href="../../Application/Views/register.html">Register here</a></tr>
+	</table>
+	</td></tr>
+	</table>
+</body>
+</html>

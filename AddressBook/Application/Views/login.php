@@ -1,7 +1,4 @@
 <?php 
-require_once "../../Config/Config.php";
-require_once "../Controllers/Login.php";
-
 if (isset($_POST['submit'])) {   
 	$login = new Login($_POST);
     $error =  $login->validate();
@@ -25,7 +22,7 @@ if (isset($_POST['submit'])) {
 	</header>
 	<div id="Content">
 		<div id="LeftColumn">
-			<img src = "../../Public/images/download.jpg">
+			<img src = "../Public/images/download.jpg">
 		</div>
 		<div id="RightColumn">
 			<div id="LoginFormContent">

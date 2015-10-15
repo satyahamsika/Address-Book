@@ -10,8 +10,14 @@ class Database
 	{
 		$column = implode(",", array_keys($values));
         $value = "'" . implode("','", array_values($values)) . "'";
-        $sql = "INSERT INTO $tableName ($column) VALUES ($value)";  
-        $this->db->query($sql);             
+        $sql = "INSERT INTO $tableName ($column) VALUES ($value)"; 
+        $result = mysqli_query($this->db, $sql); 
+        //$this->db->query($sql);     
+        if ($result) {
+        	return true;
+        } else {
+        	return false;
+        }
     }              
     public function count($tableName, $selCols, $where) 
 	{	

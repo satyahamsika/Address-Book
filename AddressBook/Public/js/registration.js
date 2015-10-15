@@ -58,7 +58,7 @@ function confirmPasswordValidation()
         alert("Confirm password length must be between "+lBound+"  to "+uBound);          
         blurActionOn(cPassword);         
         return false;        
-    } else if (!isMatch(checkPassword,checkConfirmPassword)) {            
+    } else if (!isMatch(checkPassword,checkConfirmPasswod)) {            
         alert("Password mismatch"); 
         return false;     
     } else {         

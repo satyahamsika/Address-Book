@@ -1,16 +1,7 @@
 <?php 
-require_once "../../Config/Config.php";
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/Signup.php";
+require_once "/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php";
+require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Signup.php";
 
-if (isset($_POST['submit'])) {       
-    $signup = new Signup($_POST);
-    $error =  $signup->validate();
-    if ($error['errorFlag'] === false) {
-        if ($signup->addUser() === true) {
-            header('Location: http://www.google.com/');         
-        }
-    }    
-}
 ?>
 <!doctype html>
 <html>
@@ -18,10 +9,10 @@ if (isset($_POST['submit'])) {
         <title>Register</title>
         <meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
         <meta content = "utf-8" http-equiv="encoding">
-        <link rel = "stylesheet" type = "text/css" href = "../../Public/css/Signup.css"/>
-        <script src = "../../Public/js/common.js" type="application/javascript">
+        <link rel = "stylesheet" type = "text/css" href = "../Public/css/Signup.css"/>
+        <script src = "../Public/js/common.js" type="application/javascript">
         </script>
-        <script src = "../../Public/js/registration.js" type="application/javascript">
+        <script src = "../Public/js/registration.js" type="application/javascript">
         </script> 
     </head>
     <body>        
@@ -36,7 +27,7 @@ if (isset($_POST['submit'])) {
         <div id = "content">
             <div id="CenterContent">
                 <div id="RegisterFormContent">
-                <form name = "registration" action = "Register.php" method = "POST">
+                <form name = "registration" method = "POST">
                 <p class = "ex">
                     <p>Name<span>*</span><br/>
                         <input type = "text" name = "name" id = "pname" onblur = "nameValidation()"><br/>

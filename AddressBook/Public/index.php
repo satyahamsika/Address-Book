@@ -2,8 +2,11 @@
 define('DS', DIRECTORY_SEPARATOR);
 define('HOME', dirname(__FILE__));
 
-require_once '../Application/Controllers/Controller.php';
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php";
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/Controller.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/login.php';
+//require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/Register.php";
+
 
 function __autoload($class)
 {
@@ -15,6 +18,8 @@ function __autoload($class)
 		require_once HOME . DS . 'Views'  . DS . strtolower($class) . '.php';
 	} 
 }
-$conn = new LoginController();
-$conn->newLogin();
+//$conn = new LoginController();
+//$conn->newLogin();
+//$con = new SignupController();
+//$con->newSignup();
 ?>

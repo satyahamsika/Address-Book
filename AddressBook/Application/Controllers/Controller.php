@@ -1,4 +1,5 @@
 <?php
+//require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/Register.php"; 
 
 class LoginController 
 {
@@ -14,7 +15,7 @@ class LoginController
         	}
 			if ($error['errorFlag'] === false) {
 				if ($login->checkUser === true) {
-					header('Location: ../Application/Views/listPage.html');
+					header('Location: ../Views/listPage.html');
 				}
 			}
 		}
@@ -24,8 +25,8 @@ class SignupController
 {
 	function newSignup()
 	{
-		if (isset($_POST['submit'])) { 			    
-	    	$signup = new Signup($_POST);
+		if (isset($_POST['submit'])) { 
+			$signup = new Signup($_POST);
 	    	$signup->name = $_POST['name']; 
 	    	$signup->emailId = $_POST['emailid']; 
     		$signup->password = $_POST['password'];

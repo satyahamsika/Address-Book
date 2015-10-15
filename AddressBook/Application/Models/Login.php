@@ -1,4 +1,7 @@
 <?php
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php';
+
 class Login
 {
 	private $emailId = "";
@@ -37,17 +40,17 @@ class Login
 	}
 	public function checkUser()
 	{
+		$this->hash = md5($this->password);
 		$check['emailid'] = $this->emailId;
 		$check['password'] = $this->hash;
 		$cond1 = $check['emailid'];
 		$cond2 = $check['password'];
 		$where = "email_id = '$cond1' AND password = '$cond2'";
 		$bol = $this->db->count('users', 'email_id,password', $where);
-		if ($bol === true) {
-        	return true;
-        } else {
-        	return false;
-        }
+		echo $bol;		
+		if($bol === 1) {
+			header('Location: ../Application/Views/listPage.html');  
+		} 
 	}
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php";
+//require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/Controller.php';
 require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php";
 
 class Signup 

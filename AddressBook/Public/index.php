@@ -18,8 +18,4 @@ function __autoload($class)
 		require_once HOME . DS . 'Views'  . DS . strtolower($class) . '.php';
 	} 
 }
-//$conn = new LoginController();
-//$conn->newLogin();
-//$con = new SignupController();
-//$con->newSignup();
 ?>

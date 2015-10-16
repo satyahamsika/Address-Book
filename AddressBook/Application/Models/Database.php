@@ -13,6 +13,7 @@ class Database
 		$column = implode(",", array_keys($values));
         $value = "'" . implode("','", array_values($values)) . "'";
         $sql = "INSERT INTO $tableName ($column) VALUES ($value)"; 
+        echo $sql;
         $result = mysqli_query($this->db, $sql);  
 
         if ($result) {

@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
             $error =  $signup->validate();
             if ($error['errorFlag'] === false) {
                 if ($signup->addUser() === true) {
-                    header('Location: ../Views/listPage.html');         
+                    header('Location: ../Views/listPage.php');         
                 }
             }   
         }

@@ -24,7 +24,7 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
 <head>
 	<title>Login</title>
 	<link rel = "stylesheet" type = "text/css" media = "all" href = "../Public/css/Signup.css"/>
-	<script src = "../../Public/js/login.js" type="application/javascript">
+	<script src = "../Public/js/login.js" type="application/javascript">
     </script>
 </head>
 <body>

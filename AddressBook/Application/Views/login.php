@@ -12,7 +12,7 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
         	}
 			if ($error['errorFlag'] === false) {
 				if ($login->checkUser() === true) {
-					header('Location: ../Views/listPage.html');
+					header('Location: ../Views/listPage.php');
 				} else {
 					echo "Invalid user";
 				}

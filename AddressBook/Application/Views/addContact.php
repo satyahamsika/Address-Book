@@ -10,6 +10,8 @@ if (isset($_POST['submit'])) {
             $addressbook->state_name = $_POST['state_name'];
             $addressbook->city_name = $_POST['city_name'];            
             $error =  $addressbook->validate();
+            $error = $addressbook->addAddress();
+            $error = $addressbook->listAddress();
             if ($error['errorFlag'] === false) {
                 if ($addressbook->addAddress() === true) {
                     header('Location: ../Views/listPage.php');         

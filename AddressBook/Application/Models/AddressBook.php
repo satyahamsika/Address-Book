@@ -1,5 +1,5 @@
 <?php
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php";
+require_once "../../Application/Models/Database.php";
 
 class AddressBook
 {
@@ -35,7 +35,6 @@ class AddressBook
 			$error['errorFlag'] = true;
 			$error['errorMsg'] = 'Address cannot be null';
 		} 
-		echo $this->contact_phone_no;
 		if (empty($this->contact_phone_no)) {
 			$error['errorFlag'] = true;
 			$error['errorMsg'] = 'Mobile no cannot be null';
@@ -61,28 +60,23 @@ class AddressBook
 	public function addAddress()
 	{
 		$add['contact_name'] = $this->contact_name;
-		$add['contact_phone_no '] = $this->contact_phone_no ;
+		$add['contact_phone_no '] = $this->contact_phone_no;
 		$addd['contact_address'] = $this->contact_address;
-		$addco['country_name'] = $this->country_name;
-        $adds['state_name'] = $this->state_name;
-        $addci['city_name'] = $this->city_name;        
-        $this->db->insert('contacts', $add);	
-        $this->db->insert('address', $addd);
-        $this->db->insert('country', $addco);
-        $this->db->insert('state', $adds);
-        $this->db->insert('city', $addci);
-    }     
+		$do = new Database();
+		$do->insert('contacts', $add);
+		$sqli = "INSERT INTO address(contact_id, contact_address) values (LAST_INSERT_ID(), '$this->contact_address')";
+		$result = mysqli_query($do->db, $sqli);
+	}
     public function listAddress()
     {
-
-    } 
-    public function updateAddress()
-    {
-
-    }
-    public function deleteAddress()
-    {
-    	
-    }
+    	$add['contact_name'] = $this->contact_name;
+		$add['contact_phone_no '] = $this->contact_phone_no;
+		$addd['contact_address'] = $this->contact_address;
+		$do = new Database();
+    	$result = $do->select('contacts', $add, 'address', $addd);
+    
+    	return $result;
+    }     
 }
 ?>
+

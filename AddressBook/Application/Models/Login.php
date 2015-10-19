@@ -1,5 +1,5 @@
 <?php
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/login.php';
 require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php';
 
 class Login
@@ -17,9 +17,17 @@ class Login
 
 		return $this;
 	}
+	public function __construct($params) 
+	{
+		if (is_array($params)) {
+		 	$this->emailId = $params['emailId'];
+			$this->password = $params['password'];
+			$this->confirmPassword = $params['confirmpassword'];
+			$this->db = new Database();
+		}
+	}
 	public function validate()
 	{		
-		$this->db = new Database();
 		$error = array('errorFlag' => false, 'errorMsg' => "");
 		if (empty($this->emailId)) {
 			$error['errorFlag'] = true;
@@ -35,7 +43,7 @@ class Login
 			$error['errorFlag'] = true;
 			$error['errorMsg'] = 'Password must be alphanumeric';
 		}
-
+		
 		return $error;
 	}
 	public function checkUser()
@@ -49,7 +57,8 @@ class Login
 		$bol = $this->db->count('users', 'email_id,password', $where);
 		echo $bol;		
 		if($bol === 1) {
-			header('Location: ../Application/Views/listPage.html');  
+			return true;
+			//header('Location: ../Application/Views/listPage.php');  
 		} 
 	}
 }

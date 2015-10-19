@@ -74,7 +74,7 @@ class AddressBook
 		$addd['contact_address'] = $this->contact_address;
 		$do = new Database();
     	$result = $do->select('contacts', $add, 'address', $addd);
-    
+    	
     	return $result;
     }     
 }

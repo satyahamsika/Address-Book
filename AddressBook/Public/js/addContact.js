@@ -4,9 +4,9 @@ states['Mexico'] = new Array('Colima','Hidalgo');
 var cities = new Array();
 
 cities['India'] = new Array();
-cities['India']['TamilNadu']          = new Array('Adyar','Chennai','sholinganalur', 'Tambaram');
+cities['India']['TamilNadu'] = new Array('Adyar','Chennai','sholinganalur', 'Tambaram');
 cities['India']['Andhra Pradesh'] = new Array('Kakinada','Cuddapah', 'Kovur', 'Ongole');
-cities['India']['Karnataka']          = new Array('Alur','Banavar', 'Bengaluru', 'Chintamani');
+cities['India']['Karnataka'] = new Array('Alur','Banavar', 'Bengaluru', 'Chintamani');
 
 cities['Mexico'] = new Array();
 cities['Mexico']['Colima'] = new Array('Armeria','Comala');

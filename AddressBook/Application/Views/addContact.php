@@ -56,19 +56,19 @@ if (isset($_POST['submit'])) {
                         <input type = "text" name = "contact_phone_no" id = "contact_phone_no" maxlength = "10" onblur = "mobNoValidation()" />
                     </p>    
                     <p>country_name
-                    <select name="country_name" id="country_name" onchange="setStates();">
-                        <option value="India">India</option>
-                        <option value="Mexico">Mexico</option>
+                    <select name = "country_name" id = "country_name" onchange = "setStates();">
+                        <option value = "India">India</option>
+                        <option value = "Mexico">Mexico</option>
                     </select>
                     </p>  
                     <p>State
-                    <select name="state_name" id="state_name" onchange="setCities();">
-                        <option value="">Please select a Country</option>
+                    <select name = "state_name" id = "state_name" onchange = "setCities();">
+                        <option value = "">Please select a Country</option>
                     </select>
                     </p>
                     <p>City
-                    <select name="city_name"  id="city_name">
-                        <option value="">Please select a Country</option>
+                    <select name = "city_name"  id = "city_name">
+                        <option value = "">Please select a Country</option>
                     </select>
                     </p>                                                    
                     <p>

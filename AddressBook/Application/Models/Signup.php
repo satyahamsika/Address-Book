@@ -1,5 +1,4 @@
 <?php
-
 require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php";
 
 class Signup 
@@ -22,6 +21,18 @@ class Signup
 
 		return $this;
 	}
+	public function __construct($params) 
+	{
+		if (is_array($params)) {
+		 	$this->name = $params['name'];
+		    $this->emailId = $params['emailId'];
+			$this->password = $params['password'];
+			$this->confirmPassword = $params['confirmpassword'];
+			$this->gender = $params['gender'];
+			$this->mobile_no = $params['mobile_no'];
+			$this->db = new Database();
+		}
+	}
 	public function validate() 
 	{
 		$error = array('errorFlag' => false, 'errorMsg' => "");
@@ -32,7 +43,6 @@ class Signup
 			$error['errorFlag'] = true;
 			$error['errorMsg'] = 'Name must be alphabets';
 		}	
-		$this->db = new Database();			
 		if (empty($this->emailId)) {
 			$error['errorFlag'] = true;
 			$error['errorMsg'] = 'E-mail id cannot be null';
@@ -92,7 +102,6 @@ class Signup
     }         
     }		
 ?>
-
 
 
 

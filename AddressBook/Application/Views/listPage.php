@@ -1,9 +1,15 @@
+<?php
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/AddressBook.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php';
+
+?>
 <!doctype html>
 <html>
 	<head>
 		<title>Address Book</title>
 		<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
-        <meta content = "utf-8" http-equiv="encoding">
+        <meta content = "utf-8" http-equiv = "encoding">
         <link rel = "stylesheet" type = "text/css" href = "../../Public/css/listPage.css"/>
 	</head>
 	<body>
@@ -15,7 +21,6 @@
 	<br/>
 	<div id = "section">
 		<button type = "button" id = "addbutton" onclick = "location.href = 'addContact.php';">Add Contact</button>
-		<button type = "button" id = "listbutton" onclick = "location.href = 'listContacts.php';">List Contact</button>
 	</div>
 	<br/>
 	<br/>
@@ -28,16 +33,23 @@
 			<th>Name</th>
 			<th>Address</th>
 			<th>Phone Number</th>
-			<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
-		<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td><center><button type="button" id="editbutton" onclick="location.href='../Views/Register.php';">Edit Contact</button>
-			<button type="button" id="deletebutton" onclick="location.href='../Views/Register.php';">Delete Contact</button></center></td></tr></tbody>
+		<?php
+		$do = new Database();
+		$db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		$sql = "SELECT contacts.contact_name,contacts.contact_phone_no,address.contact_address FROM contacts INNER JOIN address ON contacts.contact_id = address.contact_id";
+    	$result = mysqli_query($db,$sql);
+		while($row = mysqli_fetch_assoc($result)) {
+			echo "<tr>";
+			echo "<td>" . $row['contact_name'] . "</td>";
+			echo "<td>" . $row['contact_address'] . "</td>";
+			echo "<td>" . $row['contact_phone_no'] . "</td>";
+			echo "</tr>";
+		}	
+		?>
+		</tbody>
 	</table>
 	</div>
     </body>

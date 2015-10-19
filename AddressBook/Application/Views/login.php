@@ -1,29 +1,18 @@
 <?php 
 require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Login.php';
+require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/LoginController.php';
 
- if (isset($_POST['submit'])) {
-			$login = new Login($_POST);
-			$login->emailId = $_POST['emailid'];
-			$login->password = $_POST['password'];
-			$error = $login->validate();
-			if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-            echo $error['errorMsg'];            
-        	}
-			if ($error['errorFlag'] === false) {
-				if ($login->checkUser() === true) {
-					header('Location: ../Views/listPage.php');
-				} else {
-					echo "Invalid user";
-				}
-			}
-		}
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login</title>
-	<link rel = "stylesheet" type = "text/css" media = "all" href = "../Public/css/Signup.css"/>
+	<link rel = "stylesheet" type = "text/css" media = "all" href = "../../Public/css/Signup.css"/>
+	<script src = "../../Public/js/common.js" type="application/javascript">
+    </script>
+    <script src = "../../Public/js/registration.js" type="application/javascript">
+    </script> 
 	<script src = "../Public/js/login.js" type="application/javascript">
     </script>
 </head>
@@ -33,12 +22,12 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
 	</header>
 	<div id="Content">
 		<div id="LeftColumn">
-			<img src = "../Public/images/download.jpg">
+			<img src = "../../Public/images/download.jpg">
 		</div>
 		<div id="RightColumn">
 			<div id="LoginFormContent">
 			<h2>Login</h2>
-			<form name = "login" id = "loginform" method = "POST" onclick = "login.php">
+			<form name = "login" id = "loginform" method = "POST" onclick = "">
 				Username: <input type = 'text' name = 'emailid' id = 'username' onblur = "userNameValidation()"/>
 				<br/>
 				<br/>

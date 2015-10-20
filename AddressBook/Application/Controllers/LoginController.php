@@ -1,12 +1,12 @@
 <?php
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/login.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Login.php'; 
+require_once '../../AddressBook/Config/Config.php';
 
-class LoginController 
+class LoginController extends Controller
 {
-	function loginAction() 
+	public function loginAction() 
 	{
-		echo "Function into login";
+		$controller = new Controller();
+		$controller->render('login');
 		if (isset($_POST['submit'])) {
 			$login = new Login($_POST);
 			$login->emailId = $_POST['emailid'];
@@ -18,8 +18,6 @@ class LoginController
 			if ($error['errorFlag'] === false) {
 				if ($login->checkUser() === true) {
 					echo "success";
-					return true;
-					//header('Location: ../Views/listPage.php");
 				}
 			}
 		}

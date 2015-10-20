@@ -1,5 +1,5 @@
 <?php 
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Signup.php';
+require_once '../../AddressBook/Config/Config.php';
 
 ?>
 <!doctype html>
@@ -7,12 +7,14 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
     <head>
         <title>Register</title>
         <meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
-        <meta content = "utf-8" http-equiv="encoding">
-        <link rel = "stylesheet" type = "text/css" href = "../../Public/css/Signup.css"/>
-        <script src = "../../Public/js/common.js" type = "application/javascript">
+        <meta content = "utf-8" http-equiv = "encoding">
+        <link rel = "stylesheet" type = "text/css" media = "all" href = "../AddressBook/Public/css/Signup.css"/>
+        <script src = "../Public/js/common.js" type = "application/javascript">
         </script>
-        <script src = "../../Public/js/registration.js" type = "application/javascript">
+        <script src = "../Public/js/registration.js" type = "application/javascript">
         </script> 
+        <script src = "../Public/js/login.js" type = "application/javascript">
+        </script>
     </head>
     <body>        
         <br/>
@@ -24,8 +26,8 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
         } 
         ?></font>
         <div id = "content">
-            <div id="CenterContent">
-                <div id="RegisterFormContent">
+            <div id = "CenterContent">
+                <div id = "RegisterFormContent">
                 <form name = "registration" method = "POST" onclick = "Register.php">
                 <p class = "ex">
                     <p>Name<span>*</span><br/>
@@ -59,6 +61,9 @@ require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Mode
         </div>
         </div>
         </div>
+        <!-- <div>
+            <?php //include 'footer.php'; ?>
+        </div> -->
     </body>
 </html>
 

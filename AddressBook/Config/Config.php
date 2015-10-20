@@ -3,9 +3,18 @@
 	define( 'DB_USER', 'root');
 	define( 'DB_PASSWORD', 'aspire@123');
 	define( 'DB_NAME', 'addressbook');	
-	
-	require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/LoginController.php';
-	require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Controllers/SignupController.php';
-	//require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Signup.php';
-	//require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Login.php';
+	ini_set('display_errors', 'on');
+	ini_set('log_errors', 'On'); 
+	error_reporting(E_ALL);
+	define('DS', DIRECTORY_SEPARATOR);
+	define('HOME', $_SERVER['DOCUMENT_ROOT'] . '/AddressBook');
+	define('APPHOME', HOME . '/Application');
+	function __autoload($class)
+	{
+		if (file_exists(APPHOME . DS . 'Models' . DS . $class . '.php')) {
+			require_once APPHOME . DS . 'Models' . DS . $class . '.php';
+		} elseif (file_exists(APPHOME . DS . 'Controllers' . DS . $class . '.php')) {
+			require_once APPHOME . DS . 'Controllers'  . DS . $class . '.php';
+		} 	
+	}
 ?>

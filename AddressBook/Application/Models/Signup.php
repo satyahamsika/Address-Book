@@ -1,5 +1,5 @@
 <?php
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php";
+require_once '../../AddressBook/Config/Config.php';
 
 class Signup 
 {
@@ -21,20 +21,21 @@ class Signup
 
 		return $this;
 	}
-	public function __construct($params) 
-	{
-		if (is_array($params)) {
-		 	$this->name = $params['name'];
-		    $this->emailId = $params['emailId'];
-			$this->password = $params['password'];
-			$this->confirmPassword = $params['confirmpassword'];
-			$this->gender = $params['gender'];
-			$this->mobile_no = $params['mobile_no'];
-			$this->db = new Database();
-		}
-	}
+	// public function __construct($params) 
+	// {
+	// 	if (is_array($params)) {
+	// 	 	$this->name = $params['name'];
+	// 	    $this->emailId = $params['emailId'];
+	// 		$this->password = $params['password'];
+	// 		$this->confirmPassword = $params['confirmpassword'];
+	// 		$this->gender = $params['gender'];
+	// 		$this->mobile_no = $params['mobile_no'];
+	// 		$this->db = new Database();
+	// 	}
+	// }
 	public function validate() 
 	{
+		$this->db = new Database();
 		$error = array('errorFlag' => false, 'errorMsg' => "");
 		if (empty($this->name)) {
 			$error['errorFlag'] = true;
@@ -87,6 +88,7 @@ class Signup
 	}
 	public function addUser() 
 	{
+		$this->db = new Database();
 		$add['name'] = $this->name;
 		$add['email_id'] = $this->emailId;
 		$this->hash = md5($this->password);

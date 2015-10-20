@@ -1,12 +1,12 @@
 <?php
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/Register.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Signup.php';
+require_once '../../AddressBook/Config/Config.php';
 
-class SignupController 
+class SignupController extends Controller
 {
-	function signupAction()
+	public function signupAction()
 	{
-        echo "Function into signup";
+        $controller = new Controller();
+        $controller->render('Register');
 		if (isset($_POST['submit'])) { 
 			$signup = new Signup($_POST);
 	    	$signup->name = $_POST['name']; 
@@ -21,13 +21,10 @@ class SignupController
         	} 
     		if ($error['errorFlag'] === false) {
     			if ($signup->addUser() === true) {
-                    echo "success";
-            		//header('Location: ../Application/Views/listPage.php');         
+                    echo "Registered Sucessfully";            		   
         		}
     		}   
-		} else {
-            //render('views/signup.new.php')
-        }
+		} 
 		
 	}
 }

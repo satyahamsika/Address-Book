@@ -1,6 +1,5 @@
 <?php
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/login.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php';
+require_once '../../AddressBook/Config/Config.php';
 
 class Login
 {
@@ -17,7 +16,7 @@ class Login
 
 		return $this;
 	}
-	public function __construct($params) 
+	/*public function __construct($params) 
 	{
 		if (is_array($params)) {
 		 	$this->emailId = $params['emailId'];
@@ -25,7 +24,7 @@ class Login
 			$this->confirmPassword = $params['confirmpassword'];
 			$this->db = new Database();
 		}
-	}
+	} */
 	public function validate()
 	{		
 		$error = array('errorFlag' => false, 'errorMsg' => "");
@@ -48,6 +47,7 @@ class Login
 	}
 	public function checkUser()
 	{
+		$this->db = new Database();
 		$this->hash = md5($this->password);
 		$check['emailid'] = $this->emailId;
 		$check['password'] = $this->hash;

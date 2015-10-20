@@ -4,7 +4,11 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
+
+RewriteRule ^(.*)$ Public/?url=$1 [L]
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+RewriteRule !\.(js|jpg|css)$ index.php?url=$1 [L]
+
 
 
 

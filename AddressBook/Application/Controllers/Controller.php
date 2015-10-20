@@ -1,48 +1,13 @@
 <?php
-//require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Views/Register.php"; 
+require_once '../../AddressBook/Config/Config.php';
 
-class LoginController 
+class Controller
 {
-	function newLogin() 
-	{
-		if (isset($_POST['submit'])) {
-			$login = new Login($_POST);
-			$login->emailId = $_POST['emailid'];
-			$login->password = $_POST['password'];
-			$error = $login->validate();
-			if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-            echo $error['errorMsg'];            
-        	}
-			if ($error['errorFlag'] === false) {
-				if ($login->checkUser === true) {
-					header('Location: ../Views/listPage.html');
-				}
-			}
-		}
-	}
-}
-class SignupController 
-{
-	function newSignup()
-	{
-		if (isset($_POST['submit'])) { 
-			$signup = new Signup($_POST);
-	    	$signup->name = $_POST['name']; 
-	    	$signup->emailId = $_POST['emailid']; 
-    		$signup->password = $_POST['password'];
-    		$signup->confirmPassword = $_POST['cpassword'];
-    		$signup->gender = $_POST['gender'];
-    		$signup->mobile_no = $_POST['mobno']; 
-    		$error =  $signup->validate();
-    		if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-            echo $error['errorMsg'];            
-        	} 
-    		if ($error['errorFlag'] === false) {
-    			if ($signup->addUser() === true) {
-            		header('Location: ../Application/Views/listPage.html');         
-        		}
-    		}   
-		}
-	}
+	public function render($viewName)
+	{ 
+		if (file_exists(APPHOME . DS . 'Views' . DS . $viewName . '.php')) { 
+			require_once APPHOME . DS . 'Views' . DS . $viewName . '.php'; 
+		} 
+	} 
 }
 ?>

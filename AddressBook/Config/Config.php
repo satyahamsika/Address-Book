@@ -1,13 +1,13 @@
 <?php
-	define( 'DB_HOST', '127.0.0.1');
-	define( 'DB_USER', 'root');
-	define( 'DB_PASSWORD', 'aspire@123');
-	define( 'DB_NAME', 'addressbook');	
+	define('DB_HOST', '127.0.0.1');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'aspire@123');
+	define('DB_NAME', 'addressbook');	
 	ini_set('display_errors', 'on');
 	ini_set('log_errors', 'On'); 
 	error_reporting(E_ALL);
 	define('DS', DIRECTORY_SEPARATOR);
-	define('HOME', $_SERVER['DOCUMENT_ROOT'] . '/AddressBook');
+	define('HOME', dirname($_SERVER['DOCUMENT_ROOT'])); 
 	define('APPHOME', HOME . '/Application');
 	function __autoload($class)
 	{
@@ -15,6 +15,10 @@
 			require_once APPHOME . DS . 'Models' . DS . $class . '.php';
 		} elseif (file_exists(APPHOME . DS . 'Controllers' . DS . $class . '.php')) {
 			require_once APPHOME . DS . 'Controllers'  . DS . $class . '.php';
-		} 	
+		} 
 	}
 ?>
+
+
+
+

@@ -17,7 +17,7 @@ class SignupController extends Controller
     		$signup->mobile_no = $_POST['mobno']; 
     		$error =  $signup->validate();
     		if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-            echo $error['errorMsg'];            
+                echo $error['errorMsg'];            
         	} 
     		if ($error['errorFlag'] === false) {
     			if ($signup->addUser() === true) {

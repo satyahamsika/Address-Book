@@ -17,7 +17,7 @@ class LoginController extends Controller
         	}
 			if ($error['errorFlag'] === false) {
 				if ($login->checkUser() === true) {
-					echo "success";
+					echo "Success";
 				}
 			}
 		}

@@ -1,11 +1,9 @@
-<head>
 	<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
     <meta content = "utf-8" http-equiv = "encoding">
-	<link rel = "stylesheet" type = "text/css" media = "all" href = "../AddressBook/Public/css/Signup.css"/>
-	<script src = "../Public/js/common.js" type = "application/javascript">
-    </script>
-    <script src = "../Public/js/registration.js" type = "application/javascript">
+	<link rel = "stylesheet" type = "text/css" href = "/css/Signup.css"/>
+	<script src = "/js/registration.js" type = "text/javascript">
     </script> 
-	<script src = "../Public/js/login.js" type = "application/javascript">
+	<script src = "/js/login.js" type = "application/javascript">
     </script>
-</head>
+    <script src = "/js/common.js" type = "application/javascript">
+    </script>

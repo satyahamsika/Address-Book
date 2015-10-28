@@ -6,32 +6,33 @@ require_once '../../AddressBook/Config/Config.php';
 <html>
 	<head>
 	<title>Login</title>
+	<link rel = "stylesheet" type = "text/css" href = "/css/Login.css"/>
 	<?php include('header.php'); ?>
     </head>
-<body>
-	<header>
-		<h1>Address Book</h1>
-	</header>
-	<div id = "Content">
-		<div id = "LeftColumn">
-			<img src = "/images/download.jpg">
-		</div>
-		<div id = "RightColumn">
-			<div id = "LoginFormContent">
-			<h2>Login</h2>
-			<form name = "login" id = "loginform" method = "POST">
-				Username: <input type = 'text' name = 'emailid' id = 'username' onblur = "userNameValidation()"/>
-				<br/>
-				<br/>
-				Password: <input type = 'password' name = 'password' id = 'password' onblur = "passwordValidation()"/>
-				<br/>
-				<br/>
-				<input type = "submit"  value = "submit" name = "submit"/>	&nbsp;	
-		        <input type = "reset" name = "reset" value = "Reset"/>
-		    </form>
-			<br/><br/>
+	<body>
+		<header>
+			<h1>Login</h1>
+		</header>
+		<div id = "Content">
+			<div id = "LeftColumn">
+				<img src = "/images/download.jpg">
 			</div>
-		</div>
-	</div>	
-</body>
+			<div id = "RightColumn">
+				<div id = "LoginFormContent">
+				<h2>Login</h2>
+				<form name = "login" id = "loginform" method = "POST" onsubmit = "return(validate())">
+					E-mail id: <input type = 'email' name = 'emailid' id = 'username'/><span id = "usernameError"></span>
+					<br/>
+					<br/>					
+					Password: <input type = 'password' name = 'password' id = 'password' maxlength = "15" /><span id = "passwordError"></span>
+					<br/>
+					<br/>					
+					<center><input type = "submit"  value = "Submit" name = "submit"/>&nbsp;	
+			        <input type = "reset" name = "reset" value = "Reset"/></center>
+			    </form>
+				<br/><br/>
+				</div>
+			</div>
+		</div>	
+	</body>
 </html>

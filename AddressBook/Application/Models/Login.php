@@ -1,6 +1,4 @@
 <?php
-require_once '../../AddressBook/Config/Config.php';
-
 class Login
 {
 	private $emailId = "";
@@ -16,31 +14,23 @@ class Login
 
 		return $this;
 	}
-	/*public function __construct($params) 
-	{
-		if (is_array($params)) {
-		 	$this->emailId = $params['emailId'];
-			$this->password = $params['password'];
-			$this->confirmPassword = $params['confirmpassword'];
-			$this->db = new Database();
-		}
-	} */
 	public function validate()
 	{		
-		$error = array('errorFlag' => false, 'errorMsg' => "");
+		$error = array('errorFlag' => false);
+		$errorM = array('errorMsg' => "");
 		if (empty($this->emailId)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'User name cannot be null';
-		} elseif (!ctype_alnum($this->emailId)) {
+			$errorM['errorMsg'] = 'User name cannot be null';
+		} elseif (!filter_var($this->emailId, FILTER_VALIDATE_EMAIL)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'User name must be alphanumeric';
+			$errorM['errorMsg'] = 'User name must be valid';
 		}
 		if (empty($this->password)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Password cannot be null';
+			$errorM['errorMsg'] = 'Password cannot be null';
 		} elseif (!ctype_alnum($this->password)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Password must be alphanumeric';
+			$errorM['errorMsg'] = 'Password must be alphanumeric';
 		}
 		
 		return $error;
@@ -51,15 +41,14 @@ class Login
 		$this->hash = md5($this->password);
 		$check['emailid'] = $this->emailId;
 		$check['password'] = $this->hash;
-		$cond1 = $check['emailid'];
-		$cond2 = $check['password'];
-		$where = "email_id = '$cond1' AND password = '$cond2'";
-		$bol = $this->db->count('users', 'email_id,password', $where);
-		echo $bol;		
-		if($bol === 1) {
+		$condMail = $check['emailid'];
+		$condPass = $check['password'];
+		$where = "email_id = '$condMail' AND password = '$condPass'";
+		$isSuccess = $this->db->count('users', 'email_id,password', $where);
+		if($isSuccess === 1) {
 			return true;
-			//header('Location: ../Application/Views/listPage.php');  
 		} 
 	}
 }
 ?>
+

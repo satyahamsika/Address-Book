@@ -1,6 +1,4 @@
 <?php
-require_once "/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/AddressBook.php";
-
 if (isset($_POST['submit'])) { 
             $addressbook = new AddressBook($_POST);
             $addressbook->contact_name = $_POST['contact_name']; 

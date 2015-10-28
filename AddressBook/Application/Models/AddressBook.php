@@ -1,6 +1,4 @@
 <?php
-require_once "../../Application/Models/Database.php";
-
 class AddressBook
 {
 	private $contact_name = "";
@@ -22,37 +20,38 @@ class AddressBook
 	}
 	public function validate() 
 	{
-		$error = array('errorFlag' => false, 'errorMsg' => "");
+		$error = array('errorFlag' => false);
+		$errorM = array('errorMsg' => "");
 		$this->db = new Database();
 		if (empty($this->contact_name)) {			
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Name cannot be null';
+			$errorM['errorMsg'] = 'Name cannot be null';
 		} elseif (!ctype_alpha($this->contact_name)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Name must be alphabets';
+			$errorM['errorMsg'] = 'Name must be alphabets';
 		}	
 		if (empty($this->contact_address)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Address cannot be null';
+			$errorM['errorMsg'] = 'Address cannot be null';
 		} 
 		if (empty($this->contact_phone_no)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Mobile no cannot be null';
+			$errorM['errorMsg'] = 'Mobile no cannot be null';
 		} elseif (!ctype_digit($this->contact_phone_no)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Mobile no must be numeric';	
+			$errorM['errorMsg'] = 'Mobile no must be numeric';	
 		} 
 		if (empty($this->country_name)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'Country cannot be null';
+			$errorM['errorMsg'] = 'Country cannot be null';
 		} 
 		if (empty($this->state_name)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'State cannot be null';
+			$errorM['errorMsg'] = 'State cannot be null';
 		}
 		if (empty($this->city_name)) {
 			$error['errorFlag'] = true;
-			$error['errorMsg'] = 'City cannot be null';
+			$errorM['errorMsg'] = 'City cannot be null';
 		}
 		
 		return $error;

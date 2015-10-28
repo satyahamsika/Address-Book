@@ -1,23 +1,22 @@
-function userNameValidation()
+function validate()
 {
-	var userName = document.login.username;
-	var letters = /^[A-Za-z]+$/;
-	if (userName.value.match(letters)) { 
-        return true;
+	var error = true;
+	var userName = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if (userName == "") {	        
+    	document.getElementById("usernameError").innerHTML = "E-mail id cannot be empty"; 
+	    var error = false; 
+	} 
+	if (password == "") { 
+        document.getElementById("passwordError").innerHTML = "Password cannot be empty";
+	    var error = false; 
+	}  
+    if (error) {
+    	return true;
+    } else {
+      	return false;
     }
-	alert('Username cannot be empty');
-    return false;     
-} 
-function passwordValidation()
-{
-	var password = document.login.password;
-	var letters = /^[A-Za-z]+$/;
-	if (password.value.match(letters)) { 
-        return true;
-    }
-	alert('Password cannot be empty');
-    return false;     
-} 
+}
 
 	
     

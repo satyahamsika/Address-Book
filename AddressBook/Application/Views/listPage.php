@@ -1,7 +1,5 @@
 <?php
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Config/Config.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/AddressBook.php';
-require_once '/var/www/hamsika.com/public_html/html/AddressBook/Application/Models/Database.php';
+require_once '../../AddressBook/Config/Config.php';
 
 ?>
 <!doctype html>

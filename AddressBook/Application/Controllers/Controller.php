@@ -1,13 +1,12 @@
 <?php
-require_once '../../AddressBook/Config/Config.php';
-
-class Controller
+class Controller 
 {
-	public function render($viewName)
-	{ 
-		if (file_exists(APPHOME . DS . 'Views' . DS . $viewName . '.php')) { 
-			require_once APPHOME . DS . 'Views' . DS . $viewName . '.php'; 
-		} 
-	} 
+    public function render($file) 
+    {  
+		$view = new View();
+		echo $view->render('viewfile.php', array('foo' => 'bar'));
+    }
 }
 ?>
+
+

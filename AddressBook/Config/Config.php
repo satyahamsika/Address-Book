@@ -3,9 +3,6 @@
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', 'aspire@123');
 	define('DB_NAME', 'addressbook');	
-	ini_set('display_errors', 'on');
-	ini_set('log_errors', 'On'); 
-	error_reporting(E_ALL);
 	define('DS', DIRECTORY_SEPARATOR);
 	define('HOME', dirname($_SERVER['DOCUMENT_ROOT'])); 
 	define('APPHOME', HOME . '/Application');

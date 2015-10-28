@@ -1,13 +1,18 @@
 <?php
 require_once '../../AddressBook/Config/Config.php';
 
-class LoginController extends Controller
+class LoginController extends BaseController
 {
 	public function loginAction() 
 	{
-		$controller = new Controller();
-		$controller->render('login');
-		if (isset($_POST['submit'])) {
+		//$fileN = APPHOME . DS . 'Views' . DS . 'login.php';
+  		//$view = new Controller();
+        //$this->render($fileN);
+		//$controller = new Controller();
+		//$this->controller->render('login');
+		// $controller = new BaseController();
+  // 		$controller->render('login');
+        if (isset($_POST['submit'])) {
 			$login = new Login($_POST);
 			$login->emailId = $_POST['emailid'];
 			$login->password = $_POST['password'];
@@ -17,7 +22,12 @@ class LoginController extends Controller
         	}
 			if ($error['errorFlag'] === false) {
 				if ($login->checkUser() === true) {
-					echo "Success";
+					//$fileN1 = APPHOME . DS . 'Views' . DS . 'listPage.php';
+                    //echo $view->render($fileN1);
+                    $controller->render('listPage');
+                    //header('Location: ../Views/listPage.php');
+				} else {
+					echo "User does not exist";
 				}
 			}
 		}

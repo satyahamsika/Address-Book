@@ -1,13 +1,18 @@
 body
 {
-	background-color: #f1f1f1;
+  background-color: #f1f1f1;
+}
+#header {
+  background-color: black;
+  width: 100%;
+  height: 75px;
+  margin-left: 0%;
 }
 h1
-{
-   text-align: center;
-   color: white;
-   background-color: black;
-   padding : 15px;
+{ 
+  text-align: center; 
+  color: white;   
+  padding : 15px;
 }
 #section
 {
@@ -16,63 +21,74 @@ h1
    background-color: #f1f1f1;
    padding : 15px;
 }
-#alphabets{
-	text-align: center;
-	color :black;
-}
 a {
-	font-size: 100%;
-	font-color: black;
-	font-family: arial;
+  font-size: 100%;
+  font-color: black;
+  font-family: arial;
 }
 #addbutton
 {  
-	float: right;
-	width: 100%;
-	height: 30px;
-	color: #282828 ;    
-	font-weight: bold;    
-	font-size: 100%;
+  float: right;
+  width: 10%;
+  height: 30px;
+  color: #282828 ;    
+  font-weight: bold;    
+  font-size: 100%;
 }
-#editbutton, #deletebutton
+/*#editbutton, #deletebutton
 {
-	width: 30%;
-  	height: 30px;
-  	color: #282828 ;    
-  	font-weight: bold;    
-  	font-size: 100%;
-}
+    width: 30%;
+    height: 30px;
+    color: #282828 ;    
+    font-weight: bold;    
+    font-size: 100%;
+}*/
 #logoutbutton
 {
-	float: right;
-	width: 10%;
-  	height: 30px;
-  	color: #282828 ;    
-  	font-weight: bold;    
-  	font-size: 100%;
+    float: right;
+    width: 10%;
+    height: 30px;
+    color: #282828 ;    
+    font-weight: bold;    
+    font-size: 100%;
 }
-#RegisterFormContent {
-  width: 60%;
-  height: 100px;
-  margin-top: 2%;
-  margin-left: 30%;
+#RegisterFormContent
+{
+    width: 60%;
+    height: 100px;
+    margin-top: 2%;
+    margin-left: 30%;
 }
-#CenterContent {
-  width: 55%;
-  height: 470px;
-  margin-left: 20%;
-  border-radius: 10px;
-  box-shadow: 2px 3px 2px #888888;
-  background-color: #B8B8B8;
-  float: left;
+#CenterContent 
+{
+    width: 60%;
+    height: 470px;
+    margin-left: 20%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px #888888;
+    background-color: #B8B8B8;
+    float: left;
 }
 #Content 
 {
-  width: 90%;
-  height: 500px;
-  border:solid 2px transparent;    
-  margin-left: 5%;
-  font-family: "Comic Sans MS", cursive, sans-serif;   
-  background-color: #f1f1f1;    
-  box-shadow: 3px 3px 3px #888888;
+    width: 90%;
+    height: 500px;
+    border:solid 2px transparent;    
+    margin-left: 5%;
+    font-family: "Comic Sans MS", cursive, sans-serif;   
+    background-color: #f1f1f1;    
+    box-shadow: 3px 3px 3px #888888;
+}
+table
+{
+    border : 1px outset #88A0C8;
+    font-family: Arial;
+    font-size: 20px; 
+    color: #003068; 
+    text-decoration: none; 
+    background-color: #E9EDF0
+}
+span 
+{
+    color:red;
 }

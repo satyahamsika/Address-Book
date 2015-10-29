@@ -8,7 +8,7 @@ require_once '../../AddressBook/Config/Config.php';
 		<title>Address Book</title>
 		<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
         <meta content = "utf-8" http-equiv = "encoding">
-        <link rel = "stylesheet" type = "text/css" href = "../../Public/css/listPage.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "/css/listPage.css"/>
 	</head>
 	<body>
 	<div id = content>
@@ -18,7 +18,7 @@ require_once '../../AddressBook/Config/Config.php';
 	</div>
 	<br/>
 	<div id = "section">
-		<button type = "button" id = "addbutton" onclick = "location.href = 'addContact.php';">Add Contact</button>
+		<button type = "button" id = "addbutton" onclick = "location.href = 'addContacts.php'">Add Contact</button>
 	</div>
 	<br/>
 	<br/>

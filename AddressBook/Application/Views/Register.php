@@ -29,11 +29,11 @@
                         Confirm Password:<br/>
                         <input type = "password" name = "cpassword" id = "cpassword" maxlength = "15"><span id = "cpasswordError"></span><br/><br/>
                         Gender:<br/>
-                        <input type = "radio" name = "gender" id = "gender" value = "male">Male
-                        <input type = "radio" name = "gender" id = "gender" value = "female">Female<span id = "genderError"></span><br/><br/>
+                        <input type = "radio" name = "genderM" id = "genderM" value = "male">Male
+                        <input type = "radio" name = "genderF" id = "genderF" value = "female">Female<span id = "genderError"></span><br/><br/>
                         Mobile No.:<br/>                        
                         <input type = "text" name = "mobileno" id = "mobileno" maxlength = "10"/><span id = "mobNoError"></span><br/><br/>   
-                        <input type = "Submit"  value = "Submit" name = "submit"/>		
+                        <input type = "Submit"  value = "Submit" name = "submit"/>      
                         <input type = "Reset" name = "reset" value = "Reset"/><br/>
                         <p>Note: All fields are mandatory</p>
                     </form>
@@ -42,4 +42,3 @@
         </div>
     </body>
 </html>
-

@@ -13,7 +13,7 @@ class LoginController extends BaseController
 				echo $error['errorMsg'];            
         	} elseif ($error['errorFlag'] === false) {
 				if ($login->checkUser() === true) {
-					$this->redirect('contacts', 'add');
+					$this->redirect('contacts', 'list');
 				} else {
 					echo "User does not exist";
 				}

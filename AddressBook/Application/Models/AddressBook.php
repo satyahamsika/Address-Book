@@ -1,57 +1,57 @@
 <?php
 class AddressBook
 {
-	private $contact_name = "";
-	private $contact_address = "";
-	private $contact_phone_no  = "";
-	private $country_name = "";
-	private $state_name = "";
-	private $city_name = "";
-	private $db = "";
-	public function __get($name)
+	public $contact_name = "";
+	public $contact_address = "";
+	public $contact_phone_no  = "";
+	public $country_name = "";
+	public $state_name = "";
+	public $city_name = "";
+	public $db = "";
+	public function __construct($params) 
 	{
-		return $this->$name;
-	}
-	public function __set($name, $value) 
-	{
-		$this->$name = $value;
-
-		return $this;
+		if (is_array($params)) {
+		 	$this->contact_name = $params['contact_name'];
+		    $this->contact_address = $params['contact_address'];
+			$this->contact_phone_no = $params['contact_phone_no'];
+			$this->country_name = $params['country_name'];
+			$this->state_name = $params['state_name'];
+			$this->city_name = $params['city_name'];
+			$this->db = new Database();
+		}
 	}
 	public function validate() 
 	{
-		$error = array('errorFlag' => false);
-		$errorM = array('errorMsg' => "");
-		$this->db = new Database();
+		$error = array('errorFlag' => false, 'errorMsg' => array());
 		if (empty($this->contact_name)) {			
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Name cannot be null';
+			$error['errorMsg'] = 'Name cannot be null';
 		} elseif (!ctype_alpha($this->contact_name)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Name must be alphabets';
+			$error['errorMsg'] = 'Name must be alphabets';
 		}	
 		if (empty($this->contact_address)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Address cannot be null';
+			$error['errorMsg'] = 'Address cannot be null';
 		} 
 		if (empty($this->contact_phone_no)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Mobile no cannot be null';
+			$error['errorMsg'] = 'Mobile no cannot be null';
 		} elseif (!ctype_digit($this->contact_phone_no)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Mobile no must be numeric';	
+			$error['errorMsg'] = 'Mobile no must be numeric';	
 		} 
 		if (empty($this->country_name)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'Country cannot be null';
+			$error['errorMsg'] = 'Country cannot be null';
 		} 
 		if (empty($this->state_name)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'State cannot be null';
+			$error['errorMsg'] = 'State cannot be null';
 		}
 		if (empty($this->city_name)) {
 			$error['errorFlag'] = true;
-			$errorM['errorMsg'] = 'City cannot be null';
+			$error['errorMsg'] = 'City cannot be null';
 		}
 		
 		return $error;

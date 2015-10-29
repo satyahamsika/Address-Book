@@ -1,5 +1,11 @@
 header {
   background-color: black;
+  width: 80%;
+  height: 75px;
+  margin-left: 10%;
+}
+#header {
+  background-color: black;
   width: 60%;
   height: 75px;
   margin-left: 20%;
@@ -12,10 +18,10 @@ h1
 }
 #Content 
 {
-  width: 90%;
-  height: 500px;
+  width: 80%;
+  height: 600px;
   border:solid 2px transparent;    
-  margin-left: 5%;
+  margin-left: 10%;
   font-family: "Comic Sans MS", cursive, sans-serif;   
   background-color: #f1f1f1;    
   box-shadow: 3px 3px 3px #888888;
@@ -71,7 +77,7 @@ span
 #CenterContent {
   width: 60%;
   height: 500px;
-  margin-top: 1%;
+  margin-top: 2%;
   margin-left: 20%;
   border-radius: 10px;
   box-shadow: 2px 3px 2px #888888;
@@ -79,8 +85,8 @@ span
   float: left;
 }
 #RegisterFormContent {
-  width: 60%;
-  height: 100px;
+  width: 80%;
+  height: 80px;
   margin-top: 5%;
   margin-bottom: 10%;
   margin-left: 30%;

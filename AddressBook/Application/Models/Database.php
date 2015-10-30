@@ -13,7 +13,9 @@ class Database
 		$column = implode(",", array_keys($values));
         $value = "'" . implode("','", array_values($values)) . "'";
         $sql = "INSERT INTO $tableName ($column) VALUES ($value)"; 
-        $result = mysqli_query($this->db, $sql);  
+        $result = mysqli_query($this->db, $sql); 
+        // $proc = "CALL insertProc()";
+        // $result = mysqli_query($this->db, $proc); 
         if ($result) {
         	return true;
         } else {
@@ -27,6 +29,13 @@ class Database
 		$exist = mysqli_affected_rows($this->db);
 		
 		return $exist;
+	}
+	public function delete($tableName, $where)
+	{
+		$sql = "DELETE FROM $tableName WHERE $where";
+		$result = mysqli_query($this->db, $sql);
+
+		return $result;
 	}
 }
 ?>

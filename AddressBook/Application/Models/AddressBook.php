@@ -62,9 +62,11 @@ class AddressBook
 		$this->db = new Database();
 		$add['contact_name'] = $this->contact_name;
 		$add['contact_phone_no '] = $this->contact_phone_no;
-		$addd['contact_address'] = $this->contact_address;
-		$this->db->insert('contacts', $add);
-		$this->db->insert('address',$addd);
+		$add['contact_address'] = $this->contact_address;
+		// $proc = "CALL insertProc()";
+		// $result = mysqli_query($this->db, $proc);
+		$result = $this->db->insert('contacts', $add);
+		//$this->db->insert('address',$addd);
 		//$sqli = "INSERT INTO address(contact_address) values ('$this->contact_address')";
 		//$result = mysqli_query($this->db, $sqli);
 		

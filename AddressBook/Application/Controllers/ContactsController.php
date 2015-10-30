@@ -18,19 +18,26 @@ class ContactsController extends BaseController
                 echo $error;
             } elseif ($error['errorFlag'] === false) {
                 if ($addressbook->addAddress() === true) {
+                    echo "hello world";
+                    echo $result;
                     $this->redirect('Contacts', 'list');             
                 } 
             }
         }
     }
-    // public function editAction()
-    // {
+    public function editAction()
+    {
+        $this->render(APPHOME . DS . 'Views' . DS . 'editContact.php');
 
-    // }
-    // public function deleteAction()
-    // {
-
-    // }
+    }
+    public function deleteAction()
+    {
+        $delete['contact_name'] = $this->contact_name;
+        $where = 'contact_name = $this->contact_name';
+        $result = $this->db->delete('contacts', $delete, 'address', $addd);
+        
+        return $result;
+    }
 
     
 }

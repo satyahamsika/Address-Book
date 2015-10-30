@@ -1,21 +1,21 @@
 <!doctype html>
 <html>
 <head>
-	<title>Add Contact</title>
+	<title>Edit Contact</title>
 	<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
-    <meta content = "utf-8" http-equiv="encoding">
+    <meta content = "utf-8" http-equiv = "encoding">
 	<link rel = "stylesheet" type = "text/css" href = "/css/Signup.css"/>
-    <script src = "/js/addContact.js" type="application/javascript">
+    <script src = "/js/addContact.js" type = "application/javascript">
     </script>
-	<script src = "/js/common.js" type="application/javascript">
+	<script src = "/js/common.js" type = "application/javascript">
     </script>
-    <script src = "/js/registration.js" type="application/javascript">
+    <script src = "/js/registration.js" type = "application/javascript">
     </script> 
 </head>
 <body>
 	<div id = "content">
 		<div id = "header">
-			<h1>Add Contact&nbsp;<font color = 'red'><?php if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
+			<h1>Edit Contact&nbsp;<font color = 'red'><?php if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
             echo $error['errorMsg'];            
             }
             ?></font></h1>
@@ -52,4 +52,5 @@
 	</div>
 </body>
 </html>
+
 

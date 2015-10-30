@@ -1,5 +1,6 @@
 body
 {
+    background-image: "../../Public/images/backgroundAddressBook.jpg";
   background-color: #f1f1f1;
 }
 #header {
@@ -29,20 +30,20 @@ a {
 #addbutton
 {  
   float: right;
-  width: 10%;
+  width: 15%;
   height: 30px;
   color: #282828 ;    
   font-weight: bold;    
   font-size: 100%;
 }
-/*#editbutton, #deletebutton
+#editbutton, #deletebutton
 {
     width: 30%;
     height: 30px;
     color: #282828 ;    
     font-weight: bold;    
     font-size: 100%;
-}*/
+}
 #logoutbutton
 {
     float: right;
@@ -81,10 +82,8 @@ a {
 }
 table
 {
-    border : 1px outset #88A0C8;
     font-family: Arial;
     font-size: 20px; 
-    color: #003068; 
     text-decoration: none; 
     background-color: #E9EDF0
 }

@@ -28,9 +28,12 @@ require_once '../../AddressBook/Config/Config.php';
 					<br/>
 					<br/>					
 					<center><input type = "submit"  value = "Submit" name = "submit"/>&nbsp;	
-			        <input type = "reset" name = "reset" value = "Reset"/></center>
+			        <input type = "reset" name = "reset" value = "Reset"/><br/><br/>
+			        <a href = "/Signup/signup">Register here</a>
+			        <!-- <input type = "button" name = "register" value = "Register Here" onclick = "document.write('<?php echo $this->redirect('Signup', 'signup'); ?>');" /></center> --> 
 			    </form>
-				<br/><br/>
+			     
+			 	<br/><br/>
 				</div>
 			</div>
 		</div>	

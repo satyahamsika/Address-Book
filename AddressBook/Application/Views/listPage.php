@@ -5,18 +5,16 @@ require_once '../../AddressBook/Config/Config.php';
 <!doctype html>
 <html>
 	<head>
-		<title>Address Book</title>
-		<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
-        <meta content = "utf-8" http-equiv = "encoding">
-        <link rel = "stylesheet" type = "text/css" href = "/css/listPage.css"/>
+		<title>Address Book</title>    
+		<?php include 'header.php'; ?> 
+		<link rel = "stylesheet" type = "text/css" href = "/css/listPage.css"/>
 	</head>
 	<body background = "/images/backgroundAddressBook.jpg">
 	<div id = "content">
 	<div id = "header">
-		<h1>Welcome</h1>
-		<button type = "button" id = "logoutbutton" onclick = "location.href = 'login.php';">Logout</button>
-		<a href = "/Contacts/add">Add contact</a>
-		<!-- <button type = "button" id = "addbutton" onclick = "location.href = 'addContacts.php'">Add Contact</button> -->
+		<h1>Welcome to Address Book</h1>
+		<a id = "addLink" href = "/Contacts/add">Add contact</a>&nbsp; &nbsp;<br/>
+		&nbsp;&nbsp;&nbsp;<a id = "logoutLink" href = "/Login/login">Logout</a>
 	</div>
 	<br/>
 	<br/>
@@ -29,29 +27,29 @@ require_once '../../AddressBook/Config/Config.php';
 			<th>Name</th>
 			<th>Address</th>
 			<th>Phone Number</th>
-			<th>Actions</th>
+			<th colspan = "2">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php
 		$do = new Database();
 		$db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-		$sql = "SELECT contact_name, contact_phone_no, contact_address FROM contacts";
+		$sql = "SELECT * FROM contacts";
     	$result = mysqli_query($db,$sql);
 		while($row = mysqli_fetch_assoc($result)) {
 			echo "<tr>";
 			echo "<td>" . $row['contact_name'] . "</td>";
 			echo "<td>" . $row['contact_address'] . "</td>";
 			echo "<td>" . $row['contact_phone_no'] . "</td>";
-			echo "<td><a href = '/Contacts/edit'>Edit</a>
-					<a href = '/Contacts/delete'>Delete</a></td>";
-			echo "</tr>";
+			echo "<td><a href = '/Contacts/update?id=" . $row['contact_id']."'>Edit</a></td>";
+			echo "<td><a onclick = \"javascript: return confirm('Please confirm deletion');\" href = '/Contacts/delete?id=" . $row['contact_id']."'>Delete</a></td>";
+		    echo "</tr>";
 		}	
 		?>
 		</tbody>
 	</table>
 	</div>
-    </body>
-</html>
+<?php 
+	include 'footer.php'; 
+?>
 
-<a href = "/Signup/signup">Register here</a>

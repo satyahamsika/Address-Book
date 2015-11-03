@@ -2,20 +2,21 @@
 <html>
     <head>
         <title>Register</title>
-        <link rel = "stylesheet" type = "text/css" href = "/css/Signup.css"/>
-        <script src = "/js/registration.js" type = "text/javascript">
-        </script>
         <?php include('header.php'); ?>
+        <link rel = "stylesheet" type = "text/css" href = "/css/Register.css"/>
     </head>
-    <body>        
+    <body background = "/images/backgroundAddressBook.jpg">        
         <br/>
         <div id = "header">
             <h1>Register</h1>
         </div>
-        <font color = "red"><?php if (isset($error['errorFlag']) && $error['errorFlag'] === true) {
-            echo $error['errorMsg'];            
-        } 
-        ?></font>
+        <font color = "red">
+            <?php 
+                if (isset($error['errorFlag']) && $error['errorFlag'] === true) {
+                    echo $error['errorMsg'];            
+                } 
+            ?>
+        </font>
         <div id = "content">
             <div id = "CenterContent">
                 <div id = "RegisterFormContent">
@@ -29,8 +30,8 @@
                         Confirm Password:<br/>
                         <input type = "password" name = "cpassword" id = "cpassword" maxlength = "15"><span id = "cpasswordError"></span><br/><br/>
                         Gender:<br/>
-                        <input type = "radio" name = "genderM" id = "genderM" value = "male">Male
-                        <input type = "radio" name = "genderF" id = "genderF" value = "female">Female<span id = "genderError"></span><br/><br/>
+                        <input type = "radio" name = "gender" id = "genderM" value = "male">Male
+                        <input type = "radio" name = "gender" id = "genderF" value = "female">Female<span id = "genderError"></span><br/><br/>
                         Mobile No.:<br/>                        
                         <input type = "text" name = "mobileno" id = "mobileno" maxlength = "10"/><span id = "mobNoError"></span><br/><br/>   
                         <input type = "Submit"  value = "Submit" name = "submit"/>      
@@ -40,5 +41,7 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+<?php 
+    include 'footer.php'; 
+?>
+

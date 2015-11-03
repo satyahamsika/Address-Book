@@ -1,35 +1,37 @@
+<?php
+require_once '../../AddressBook/Config/Config.php';
+
+$id = $_GET['id'];
+$where = "contact_id = " . $id;
+$query = "SELECT * FROM contacts WHERE $where";
+$this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$result = mysqli_query($this->db, $query);
+while ($row = mysqli_fetch_array($result))
+{
+?>
 <!doctype html>
 <html>
 <head>
-	<title>Edit Contact</title>
-	<meta content = "text/html;charset=utf-8" http-equiv = "Content-Type">
-    <meta content = "utf-8" http-equiv = "encoding">
-	<link rel = "stylesheet" type = "text/css" href = "/css/Signup.css"/>
-    <script src = "/js/addContact.js" type = "application/javascript">
-    </script>
-	<script src = "/js/common.js" type = "application/javascript">
-    </script>
-    <script src = "/js/registration.js" type = "application/javascript">
-    </script> 
+    <title>Edit Contact</title>
+    <?php include 'header.php'; ?>
+    <link rel = "stylesheet" type = "text/css" href = "/css/Signup.css"/>
 </head>
-<body>
-	<div id = "content">
-		<div id = "header">
-			<h1>Edit Contact&nbsp;<font color = 'red'><?php if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-            echo $error['errorMsg'];            
-            }
-            ?></font></h1>
-		</div>
-		<div id = "content">
-			<div id="CenterContent">
+<body background = "/images/backgroundAddressBook.jpg">
+    <div id = "content">
+        <div id = "header">
+            <h1>Edit Contact&nbsp;<a id = "goback" href = '/Contacts/list'>Back</a></h1>
+        </div>
+        <div id = "content">
+            <div id="CenterContent">
                 <div id="RegisterFormContent">
                     <form name = "addcontact" method = "POST" onsubmit = "return(validateContacts())">
+                        <input type = "hidden" name = "id" value = "<?php echo "{$row['contact_id']}"; ?>"/>
                         Name:<br/>
-                        <input type = "text" name = "contact_name" id = "contact_name"><span id = "contact_nameError"></span><br/>
+                        <input type = "text" name = "contact_name" id = "contact_name" value = <?php echo "{$row['contact_name']}";?>><span id = "contact_nameError"></span><br/>
                         Address:<br/>
-                        <textarea rows = "4" cols = "40" name = "contact_address" id = "contact_address"></textarea><span id = "contact_addressError"></span><br/>
+                        <textarea rows = "4" cols = "40" name = "contact_address" id = "contact_address"><?php echo "{$row['contact_address']}";?></textarea><span id = "contact_addressError"></span><br/>
                         Mobile No.:<br/>                        
-                        <input type = "text" name = "contact_phone_no" id = "contact_phone_no" maxlength = "10"/><span id = "contact_phone_noError"></span><br/>
+                        <input type = "text" name = "contact_phone_no" id = "contact_phone_no" maxlength = "10" value = <?php echo "{$row['contact_phone_no']}";?>><span id = "contact_phone_noError"></span><br/>
                         Country:<br/>
                         <select name = "country_name" id = "country_name" onchange = "setStates();">
                             <option value = "India">India</option>
@@ -47,10 +49,11 @@
                         <input type = "Reset" name = "Reset" value = "Reset">
                     </form>
                 </div>
-            </div>
-		<div>
-	</div>
+            </div>        
+        </div>
+    </div>
 </body>
 </html>
-
-
+<?php
+}
+?>

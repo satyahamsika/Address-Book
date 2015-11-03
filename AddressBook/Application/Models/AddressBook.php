@@ -1,5 +1,5 @@
 <?php
-class AddressBook
+class AddressBook 
 {
 	public $contact_name = "";
 	public $contact_address = "";
@@ -63,13 +63,8 @@ class AddressBook
 		$add['contact_name'] = $this->contact_name;
 		$add['contact_phone_no '] = $this->contact_phone_no;
 		$add['contact_address'] = $this->contact_address;
-		// $proc = "CALL insertProc()";
-		// $result = mysqli_query($this->db, $proc);
 		$result = $this->db->insert('contacts', $add);
-		//$this->db->insert('address',$addd);
-		//$sqli = "INSERT INTO address(contact_address) values ('$this->contact_address')";
-		//$result = mysqli_query($this->db, $sqli);
-		
+				
 		return $result;
 	}
     public function listAddress()
@@ -81,5 +76,22 @@ class AddressBook
     	
     	return $result;
     }     
+    public function editAddress()
+    {
+    	$this->update = array ('contact_name' => $_POST['contact_name'],'contact_address' => $_POST['contact_address'],
+    	 	'contact_phone_no' => $_POST['contact_phone_no']);
+    	$id = $_GET['id'];
+    	$result = $this->db->update('contacts', $this->update, 'contact_id = ' . $id);
+
+    	 return $result;
+    }
+    public function deleteAddress()
+    {
+    	$id = $_GET['id'];
+       	return $this->db->delete('contacts', 'contact_id = ' . $id);
+   	}
 }
 ?>
+
+
+

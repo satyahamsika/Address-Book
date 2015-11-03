@@ -5,41 +5,53 @@ class ContactsController extends BaseController
 {
     public function listAction()
     {
-        $this->render(APPHOME . DS . 'Views' . DS . 'listPage.php');
+        $this->render('listPage');
     }
 	public function addAction()
 	{
-        $this->render(APPHOME . DS . 'Views' . DS . 'addContact.php');
+        $this->render('addContact');
         if (isset($_POST['submit'])) { 
             $addressbook = new AddressBook($_POST);
             $error = $addressbook->validate();              
             if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-                $error = implode(",<br/>",$error['errorMsg']);   
-                echo $error;
-            } elseif ($error['errorFlag'] === false) {
-                if ($addressbook->addAddress() === true) {
-                    echo "hello world";
-                    echo $result;
+                $error = implode(",<br/>", $error['errorMsg']);   
+        } elseif ($error['errorFlag'] === false) {
+                if ($addressbook->addAddress() === true) {  
+                    echo "<script>alert('Submitted successfully!');</script>";
                     $this->redirect('Contacts', 'list');             
                 } 
             }
         }
-    }
-    public function editAction()
+    }    
+    public function updateAction()
     {
-        $this->render(APPHOME . DS . 'Views' . DS . 'editContact.php');
-
+        $this->render('editContact');
+             
+        if(isset($_POST['submit'])) {
+            $addressbook = new AddressBook($_POST);
+            $result = $addressbook->editAddress();
+            if ($result === TRUE) {
+                echo "Successfully updated";
+                $this->redirect('Contacts', 'list');
+            } 
+        }
     }
     public function deleteAction()
     {
-        $delete['contact_name'] = $this->contact_name;
-        $where = 'contact_name = $this->contact_name';
-        $result = $this->db->delete('contacts', $delete, 'address', $addd);
-        
+        $addressbook = new AddressBook($_POST);
+        $result = $addressbook->deleteAddress();
+        if($result === true) {
+            echo "Deleted sucessfully";
+            $this->redirect('Contacts', 'list');
+        } else {
+            echo "Cannot be deleted";
+        }
+              
         return $result;
     }
-
-    
 }
 ?>
  
+
+ 
+        

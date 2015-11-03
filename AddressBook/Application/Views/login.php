@@ -9,9 +9,10 @@ require_once '../../AddressBook/Config/Config.php';
 	<link rel = "stylesheet" type = "text/css" href = "/css/Login.css"/>
 	<?php include('header.php'); ?>
     </head>
-	<body>
+	<body background = "/images/backgroundAddressBook.jpg">
 		<header>
-			<h1>Login</h1>
+			<h1>Address Book</h1>
+			&nbsp;&nbsp;<h3>All your contacts in one place!!!</h3>
 		</header>
 		<div id = "Content">
 			<div id = "LeftColumn">
@@ -30,12 +31,11 @@ require_once '../../AddressBook/Config/Config.php';
 					<center><input type = "submit"  value = "Submit" name = "submit"/>&nbsp;	
 			        <input type = "reset" name = "reset" value = "Reset"/><br/><br/>
 			        <a href = "/Signup/signup">Register here</a>
-			        <!-- <input type = "button" name = "register" value = "Register Here" onclick = "document.write('<?php echo $this->redirect('Signup', 'signup'); ?>');" /></center> --> 
-			    </form>
-			     
+			    </form>			     
 			 	<br/><br/>
 				</div>
 			</div>
 		</div>	
-	</body>
-</html>
+<?php 
+	include 'footer.php'; 
+?>

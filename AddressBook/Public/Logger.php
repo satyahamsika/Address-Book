@@ -10,7 +10,7 @@ class Logger
 	public function log($message) 
 	{	        
         $time = date('[d/M/Y:H:i:s]');
-        fwrite($this->fp, "$time $message" . PHP_EOL);
+        fwrite($this->fp, $time . $message . PHP_EOL);
     }    
 	public function __destruct() 
 	{

@@ -6,8 +6,9 @@ abstract class BaseController
 	public $fileName;
 	protected function render($fileName) 
     {  
+    	$path = APPHOME . DS . 'Views' . DS;
     	$view = new View();
-	    echo $view->render($fileName);
+    	echo $view->render($path . $fileName . '.php');
 	}
 	protected function redirect($controllerName, $actionName) 
 	{

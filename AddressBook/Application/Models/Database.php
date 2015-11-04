@@ -13,7 +13,7 @@ class Database
 		$column = implode(",", array_keys($values));
         $value = "'" . implode("','", array_values($values)) . "'";
         $sql = "INSERT INTO $tableName ($column) VALUES ($value)"; 
-        $result = mysqli_query($this->db, $sql); 
+         $result = mysqli_query($this->db, $sql); 
         if ($result) {
         	return true;
         } else {
@@ -44,7 +44,6 @@ class Database
         }
         $Stset = implode(", ",$set);
         $sql = "UPDATE $tableName SET $Stset WHERE $where";
-        echo $sql;
         $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		if ($result = mysqli_query($this->db, $sql) === TRUE) {
 			if (mysqli_affected_rows($this->db)) {

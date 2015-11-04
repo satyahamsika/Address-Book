@@ -24,6 +24,10 @@ function validateRegistration()
         document.getElementById("cpasswordError").innerHTML = "Confirm password cannot be empty and it must be less than 12"; 
         var error = false; 
     } 
+    if (password != cpassword) {
+        document.getElementById("mismatchError").innerHTML = "Password mismatch"; 
+        var error = false; 
+    }
     if (genderM == "" && genderF == "") {
         document.getElementById("genderError").innerHTML = "Gender cannot be empty"; 
         var error = false; 

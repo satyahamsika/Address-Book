@@ -1,13 +1,14 @@
 <?php 
 require_once '../../AddressBook/Config/Config.php';
-
+session_start();
+$_SESSION['user'] = $_POST['emailid'];
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Login</title>
-	<link rel = "stylesheet" type = "text/css" href = "/css/Login.css"/>
-	<?php include('header.php'); ?>
+		<title>Login</title>
+		<link rel = "stylesheet" type = "text/css" href = "/css/Login.css"/>
+		<?php include('header.php'); ?>
     </head>
 	<body background = "/images/backgroundAddressBook.jpg">
 		<header>
@@ -39,3 +40,5 @@ require_once '../../AddressBook/Config/Config.php';
 <?php 
 	include 'footer.php'; 
 ?>
+
+

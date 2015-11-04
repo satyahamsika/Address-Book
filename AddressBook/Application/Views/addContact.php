@@ -1,4 +1,7 @@
-<!doctype html>
+<?php
+session_start();
+echo $_SESSION["user"];
+?><!doctype html>
 <html>
 <head>
 	<title>Add Contact</title>	

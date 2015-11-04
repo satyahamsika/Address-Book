@@ -9,6 +9,7 @@ class ContactsController extends BaseController
     }
 	public function addAction()
 	{
+
         $this->render('addContact');
         if (isset($_POST['submit'])) { 
             $addressbook = new AddressBook($_POST);
@@ -16,8 +17,9 @@ class ContactsController extends BaseController
             if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
                 $error = implode(",<br/>", $error['errorMsg']);   
         } elseif ($error['errorFlag'] === false) {
-                if ($addressbook->addAddress() === true) {  
-                    echo "<script>alert('Submitted successfully!');</script>";
+                $where = $_SESSION["user"];
+                if ($addressbook->addAddress($where) === true) {  
+                    echo "<script>alert('Contact added Successfully!');</script>";
                     $this->redirect('Contacts', 'list');             
                 } 
             }
@@ -31,7 +33,7 @@ class ContactsController extends BaseController
             $addressbook = new AddressBook($_POST);
             $result = $addressbook->editAddress();
             if ($result === TRUE) {
-                echo "Successfully updated";
+                echo "<script>alert('Successfully updated!');</script>";
                 $this->redirect('Contacts', 'list');
             } 
         }

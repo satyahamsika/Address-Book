@@ -6,8 +6,7 @@ $where = "contact_id = " . $id;
 $query = "SELECT * FROM contacts WHERE $where";
 $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $result = mysqli_query($this->db, $query);
-while ($row = mysqli_fetch_array($result))
-{
+while ($row = mysqli_fetch_array($result)) {
 ?>
 <!doctype html>
 <html>

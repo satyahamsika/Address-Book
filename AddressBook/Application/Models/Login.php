@@ -1,12 +1,14 @@
 <?php
 class Login
 {
+	public $userId = "";
 	public $emailId = "";
 	public $password = "";
 	public $hash = "";
 	public function __construct($params) 
 	{
 		if (is_array($params)) {
+			$this->userId = $params['userid'];
 		 	$this->emailId = $params['emailid'];
 			$this->password = $params['password'];
 			$this->db = new Database();
@@ -39,7 +41,7 @@ class Login
 		$condMail = $check['emailid'];
 		$condPass = $check['password'];
 		$where = "email_id = '$condMail' AND password = '$condPass'";
-		$isSuccess = $this->db->count('users', 'email_id,password', $where);
+		$isSuccess = $this->db->count('users', 'user_id,email_id,password', $where);
 		if($isSuccess === 1) {
 			return true;
 		} 

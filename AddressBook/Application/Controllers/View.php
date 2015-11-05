@@ -1,6 +1,9 @@
 <?php
 class View 
 {
+	/**
+    * To render the html page
+    */
 	public function render($fileName) 
     {  
     	extract($fileName);

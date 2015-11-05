@@ -29,16 +29,14 @@ $_SESSION['user'] = $_POST['emailid'];
 					Password: <input type = 'password' name = 'password' id = 'password' maxlength = "15" /><span id = "passwordError"></span>
 					<br/>
 					<br/>					
-					<center><input type = "submit"  value = "Submit" name = "submit"/>&nbsp;	
-			        <input type = "reset" name = "reset" value = "Reset"/><br/><br/>
+					<center><input class = "submit" type = "submit"  value = "Login" name = "submit"/>&nbsp;	
+			        <input class = "reset" type = "reset" name = "reset" value = "Reset"/><br/><br/>
 			        <a href = "/Signup/signup">Register here</a>
 			    </form>			     
 			 	<br/><br/>
 				</div>
 			</div>
-		</div>	
-<?php 
-	include 'footer.php'; 
-?>
-
+		</div>
+	</body>
+</html>
 

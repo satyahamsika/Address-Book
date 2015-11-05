@@ -3,6 +3,9 @@ require_once '../../AddressBook/Config/Config.php';
 
 class LoginController extends BaseController
 {
+    /**
+    * Validation for user login 
+    */
     public function loginAction() 
     {
         $this->render('login');
@@ -10,7 +13,8 @@ class LoginController extends BaseController
             $login = new Login($_POST);
             $error = $login->validate();
             if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
-                echo $error['errorMsg'];            
+                $error = implode(",<br/>", $error['errorMsg']);   
+                echo "<font color= 'red'>$error</font>";                        
             } elseif ($error['errorFlag'] === false) {
                 if ($login->checkUser() === true) {
                     $this->redirect('Contacts', 'list');
@@ -20,12 +24,15 @@ class LoginController extends BaseController
             }
         }
     }
+    /**
+    * Redirecting to logout page
+    */
     public function logoutAction()
     {
         $this->render('logout');
     }
-
 }
 ?>
 
 
+               

@@ -13,7 +13,7 @@ body
 h1
 { 
     text-align: center; 
-    color: violet;   
+    color: #966F1F;    
     padding : 15px;
 }
 #section
@@ -102,22 +102,10 @@ table
 th{
     font-weight: bold;
 }
-/*tr:nth-child(even) 
-{
-    background: #CCC;
-}
-tr:nth-child(odd) 
-{
-    background: #FFF;
-}*/
 span 
 {
     color:red;
 }
-/*tbody tr:nth-child(odd)
-{
-  background: #eee;
-}*/
 #loginlink
 {
     float:right;
@@ -129,4 +117,22 @@ span
 #footer
 {
     text-align: center;
+}
+.submit, .reset
+{
+ color: #282828;
+  font-weight: bold;
+  font-size: 100%; 
+}
+input[type = email], input[type = password], input[type = radio],
+input[type = text]
+{
+    padding: 0;
+    height: 25px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    font-size: 16px;
 }

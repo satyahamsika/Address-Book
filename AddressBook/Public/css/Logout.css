@@ -1,0 +1,23 @@
+body
+{
+    background-image: "/images/backgroundAddressBook.jpg";
+    background-color: #f1f1f1;
+}
+h1
+{ 
+    text-align: center; 
+    color: #0C2641;   
+    padding : 15px;
+}
+a 
+{
+    font-size: 150%;    
+    font-family: arial;
+    color: blue;
+    text-decoration: none;
+}
+img 
+{
+	display: block;
+    margin: 0 auto;
+}

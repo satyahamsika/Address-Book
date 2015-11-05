@@ -4,7 +4,7 @@ class Logger
 	private $logName;
 	public function __construct() 
 	{ 
-		$this->logName = !isset($logName) ? 'error_' . date('Y-m-d') . '.log' : $logName;
+		$this->logName = isset($logName) ? $logName : 'error_' . date('Y-m-d') . '.log';
 		$this->fp = fopen($this->logName, 'a+');
 	}		
 	public function log($message) 

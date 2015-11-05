@@ -3,27 +3,33 @@ body
     background-image: "/images/backgroundAddressBook.jpg";
     background-color: #f1f1f1;
 }
+#content
+{
+    height: 100%;
+}
 #header {
+    height: 10%;
     background-color: black;
     width: 100%;
-    height: 75px;
+    height: 75px%;
     margin-left: 0%;
 }
 h1
 { 
     text-align: center; 
-    color: violet;   
+    color: #966F1F;    
     padding : 15px;
 }
 #section
 {
-    float : right;
+    height: 80%;
+    /*float : right;
     color: white;
     background-color: #f1f1f1;
-    padding : 15px;
+    padding : 15px;*/
 }
-a {
-    float:right;
+a 
+{
     font-size: 100%;    
     font-family: arial;
     color: blue;
@@ -31,12 +37,12 @@ a {
 }
 #addLink
 {  
-    float: right;
     width: 15%;
     height: 30px;
     color: #282828 ;    
     font-weight: bold;    
     font-size: 150%;
+    margin-left: 75%;
 }
 #logoutLink
 {  
@@ -45,7 +51,7 @@ a {
     color: #282828 ;    
     font-weight: bold;    
     font-size: 150%;
-    margin-left: 100%;
+    margin-left: 0%;
 }
 #editbutton, #deletebutton
 {
@@ -91,25 +97,42 @@ a {
     background-color: #f1f1f1;    
     box-shadow: 3px 3px 3px #888888;
 }
-table
+th
 {
-    font-family: Arial;
-    font-size: 20px; 
-    text-decoration: none; 
-    background-color: #E9EDF0;
-    border-style: solid;
-    border-width: 1px;
-    /*border-spacing: 0.4rem;*/
-}
-th{
     font-weight: bold;
 }
-/*tr:nth-child(even) {background: #CCC}
-tr:nth-child(odd) {background: #FFF}*/
 span 
 {
     color:red;
 }
-/*tbody tr:nth-child(odd) {
-  background: #eee;
-}*/
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: Arial;
+    font-size: 20px; 
+    padding: 10px;
+}
+th
+{
+    background-color: #E4F767;
+}
+td 
+{
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.update
+{
+    color:green;
+}
+.delete
+{
+    color:red;
+}
+#footer
+{
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}

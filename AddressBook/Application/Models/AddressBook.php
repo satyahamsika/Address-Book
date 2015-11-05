@@ -20,6 +20,9 @@ class AddressBook extends Signup
             $this->db = new Database();
         }
     }
+    /**
+    * Validating the entered details 
+    */
     public function validate() 
     {
         $error = array('errorFlag' => false, 'errorMsg' => array());
@@ -39,7 +42,7 @@ class AddressBook extends Signup
             array_push($error['errorMsg'], "Mobile no cannot be null");
         } elseif (!ctype_digit($this->contact_phone_no)) {
             $error['errorFlag'] = true;
-            array_push($error['errorMsg'] , "Mobile no must be numeric");   
+            array_push($error['errorMsg'], "Mobile no must be numeric");   
         } 
         if (empty($this->country_name)) {
             $error['errorFlag'] = true;
@@ -56,6 +59,9 @@ class AddressBook extends Signup
         
         return $error;
     }
+    /**
+    * Add new contacts
+    */
     public function addAddress($user_id)
     {
         $this->db = new Database();
@@ -73,6 +79,9 @@ class AddressBook extends Signup
                 
         return $result;
     }
+    /**
+    * List the contacts
+    */
     public function listAddress($user_id)
     {    
         $this->db = new Database();
@@ -87,7 +96,10 @@ class AddressBook extends Signup
         $result = $this->db->select('contacts', $add, $where);
         
         return $result;
-    }     
+    }  
+    /**
+    * Edit the added contact
+    */   
     public function editAddress()
     {
         $this->update = array ('contact_name' => $_POST['contact_name'],'contact_address' => $_POST['contact_address'],
@@ -97,6 +109,9 @@ class AddressBook extends Signup
 
          return $result;
     }
+    /**
+    * Delete the contact
+    */
     public function deleteAddress()
     {
         $id = $_GET['id'];

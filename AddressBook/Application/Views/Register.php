@@ -1,7 +1,6 @@
 <?php 
 require_once '../../AddressBook/Config/Config.php';
 session_start();
-$_SESSION['user'] = $_POST['emailid'];
 ?>
 <!doctype html>
 <html>
@@ -40,8 +39,8 @@ $_SESSION['user'] = $_POST['emailid'];
                         <input type = "radio" name = "gender" id = "genderF" value = "female">Female<span id = "genderError"></span><br/><br/>
                         Mobile No.:<br/>                        
                         <input type = "text" name = "mobileno" id = "mobileno" maxlength = "10"/><span id = "mobNoError"></span><br/><br/>   
-                        <input type = "Submit"  value = "Submit" name = "submit"/>      
-                        <input type = "Reset" name = "reset" value = "Reset"/><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class = "submit" type = "Submit"  value = "Register" name = "submit"/>      
+                        <input class = "reset" type = "Reset" name = "reset" value = "Reset"/><br/>
                     </form>
                 </div>
             </div>

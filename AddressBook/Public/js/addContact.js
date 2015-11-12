@@ -7,18 +7,32 @@ function validateContacts()
     var country_name = document.getElementById("country_name").value;
     var state_name = document.getElementById("state_name").checked;
     var city_name = document.getElementById("city_name").checked;
+    var letters = /^[A-Za-z]+$/;
+    var mobileNum = /^[0-9]+$/;
     if (contact_name == "") {         
         document.getElementById("contact_nameError").innerHTML = "Name cannot be empty"; 
         var error = false; 
-    } 
+    } else if (!letters.test(contact_name)) {
+        document.getElementById("contact_nameError").innerHTML = "Name must be in alphabets"; 
+        var error = false;
+    } else {
+        document.getElementById("contact_nameError").innerHTML = ""; 
+    }
     if (contact_address == "") {         
         document.getElementById("contact_addressError").innerHTML = "Address cannot be empty"; 
         var error = false; 
-    } 
+    } else {
+        document.getElementById("contact_addressError").innerHTML = ""; 
+    }
     if (contact_phone_no == "") { 
         document.getElementById("contact_phone_noError").innerHTML = "Phone no cannot be empty";
         var error = false; 
-    } 
+    } else if (!mobileNum.test(contact_phone_no)) {
+        document.getElementById("contact_phone_noError").innerHTML = "mobile number must be in numbers"; 
+        var error = false;
+    }else {
+        document.getElementById("contact_phone_noError").innerHTML = ""; 
+    }
     if (country_name == "") {         
         document.getElementById("country_nameError").innerHTML = "Country name cannot be empty"; 
         var error = false; 

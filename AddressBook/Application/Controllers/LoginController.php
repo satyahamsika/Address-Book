@@ -14,7 +14,7 @@ class LoginController extends BaseController
             $error = $login->validate();
             if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
                 $error = implode(",<br/>", $error['errorMsg']);   
-                echo "<font color= 'red'>$error</font>";                        
+                echo "<font color= '#A11409'>$error</font>";                        
             } elseif ($error['errorFlag'] === false) {
                 if ($login->checkUser() === true) {
                     $this->redirect('Contacts', 'list');

@@ -1,5 +1,6 @@
 <?php 
 require_once '../../AddressBook/Config/Config.php';
+
 session_start();
 $_SESSION['user'] = $_POST['emailid'];
 ?>
@@ -39,4 +40,3 @@ $_SESSION['user'] = $_POST['emailid'];
 		</div>
 	</body>
 </html>
-

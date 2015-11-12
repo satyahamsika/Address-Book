@@ -1,8 +1,9 @@
-header {
-  background-color: black;
-  width: 90%;
-  height: 75px;
-  margin-left: 5%;
+header 
+{
+    background-color: black;
+    width: 90%;
+    height: 75px;
+    margin-left: 5%;
 }
 h1
 { 
@@ -12,7 +13,7 @@ h1
 }
 h3
 {
-  margin-left: 10%;
+    margin-left: 10%;
 }
 body
 {
@@ -20,84 +21,88 @@ body
 }
 #Content 
 {
-  width: 90%;
-  height: 500px;
-  border:solid 2px transparent;    
-  margin-left: 5%;
-  font-family: "Comic Sans MS", cursive, sans-serif;   
-  background-color: #f1f1f1;    
-  box-shadow: 3px 3px 3px #888888;
+    width: 90%;
+    height: 500px;
+    border:solid 2px transparent;    
+    margin-left: 5%;
+    font-family: "Comic Sans MS", cursive, sans-serif;   
+    background-color: #f1f1f1;    
+    box-shadow: 3px 3px 3px #888888;
 }
-img {
-  width: 95%;
-  height: 200px;
+img 
+{
+    width: 95%;
+    height: 200px;
 }
-#LeftColumn {
-  width: 40%;
-  height: 600px;
-  margin-top: 10%;
-  float: left;
-  margin-left: 5%;
+#LeftColumn 
+{
+    width: 40%;
+    height: 600px;
+    margin-top: 10%;
+    float: left;
+    margin-left: 5%;
 }
-#RightColumn {
-  width: 50%;
-  height: 400px;
-  margin-top: 5%;
-  margin-bottom: 10%;
-  margin-right: 5%;
-  border-radius: 10px;
-  box-shadow: 2px 3px 2px #888888;
-  background-color: #B8B8B8;
-  float: right;
+#RightColumn 
+{
+    width: 50%;
+    height: 400px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-right: 5%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px #888888;
+    background-color: #B8B8B8;
+    float: right;
 }
-#LoginFormContent {
-  width: 40%;
-  height: 100px;
-  margin-top: 2%;
-  margin-left: 20%;
+#LoginFormContent 
+{
+    width: 40%;
+    height: 100px;
+    margin-top: 2%;
+    margin-left: 20%;
 }
 span
 {    
-  color: red;
+    color: #A11409;
 }
 .button
 {  
-  width: 40%;
-  height: 30px;
-  color: #282828 ;    
-  font-weight: bold;    
-  font-size: 100%;
+    width: 40%;
+    height: 30px;
+    color: #282828 ;    
+    font-weight: bold;    
+    font-size: 100%;
 }
 #RegisterButton
 {  
-  width: 60%;
-  height: 40px;
-  margin-left: 10%;
-  color: #282828 ;    
-  font-weight: bold;    
-  font-size: 100%; 
+    width: 60%;
+    height: 40px;
+    margin-left: 10%;
+    color: #282828 ;    
+    font-weight: bold;    
+    font-size: 100%; 
 }
 #CenterContent {
-  width: 55%;
-  height: 470px;
-  margin-top: 1%;
-  margin-left: 20%;
-  border-radius: 10px;
-  box-shadow: 2px 3px 2px #888888;
-  background-color: rgb(182,165,140);
-  float: left;
+    width: 55%;
+    height: 470px;
+    margin-top: 1%;
+    margin-left: 20%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px #888888;
+    background-color: rgb(182,165,140);
+    float: left;
 }
 #RegisterFormContent {
-  width: 60%;
-  height: 100px;
-  margin-top: 2%;
-  margin-left: 30%;
+    width: 60%;
+    height: 100px;
+    margin-top: 2%;
+    margin-left: 30%;
 }
 .submit, .reset
 {
- color: #282828;
-  font-weight: bold;
-  font-size: 100%; 
+    color: #282828;
+    font-weight: bold;
+    font-size: 100%; 
 }
 input[type = email], input[type = password] {
     padding: 0;

@@ -10,13 +10,14 @@ class SignupController extends BaseController
     {        
         if (isset($_POST['submit'])) { 
             $signup = new Signup($_POST);
-            $error =  $signup->validate();
+            $error = $signup->validate();
             if ((isset($error['errorFlag']) && $error['errorFlag']) === true) {
                 $error = implode(",<br/>", $error['errorMsg']);   
-                echo "<font color= 'red'>$error</font>";
+                echo "<font color = '#A11409'>$error</font>";
             } elseif ($error['errorFlag'] === false) {
                 if ($signup->addUser() === true) {
-                    echo "<script>alert('Registered Successfully!');</script>";                    
+                    echo "<script>alert('Registered Successfully!');
+                    </script>";                    
                     $this->redirect('Contacts', 'list');                                                               
                 } else {
                     echo "Not registered";

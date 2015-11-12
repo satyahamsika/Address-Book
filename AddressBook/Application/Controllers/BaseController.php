@@ -18,7 +18,8 @@ abstract class BaseController
     */
     protected function redirect($controllerName, $actionName) 
     {
-        $location = "http://" . $_SERVER['SERVER_NAME'] . "/" . $controllerName . "/" . $actionName;
+        $location = "http://" . $_SERVER['SERVER_NAME'] . "/" . $controllerName . 
+        "/" . $actionName;
         header("refresh:0; url = $location");
         exit;
     }

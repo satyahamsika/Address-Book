@@ -37,7 +37,7 @@ class ContactsController extends BaseController
     public function updateAction()
     {
         $this->render('editContact');             
-        if(isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) {
             $addressbook = new AddressBook($_POST);
             $error = $addressbook->validate();  
             $result = $addressbook->editAddress();

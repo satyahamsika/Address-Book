@@ -1,13 +1,13 @@
 <?php
-class AddressBook extends Signup
+class AddressBook
 {
-    public $contact_name = "";
-    public $contact_address = "";
-    public $contact_phone_no  = "";
-    public $country_name = "";
-    public $state_name = "";
-    public $city_name = "";
-    public $db = "";
+    private $contact_name = "";
+    private $contact_address = "";
+    private $contact_phone_no  = "";
+    private $country_name = "";
+    private $state_name = "";
+    private $city_name = "";
+    private $db = "";
     public function __construct($params) 
     {
         if (is_array($params)) {
@@ -42,7 +42,7 @@ class AddressBook extends Signup
             array_push($error['errorMsg'], "Mobile no cannot be null");
         } elseif (!ctype_digit($this->contact_phone_no)) {
             $error['errorFlag'] = true;
-            array_push($error['errorMsg'], "Mobile no must be numeric");   
+            array_push($error['errorMsg'], "Mobile no must be in numbers");   
         } 
         if (empty($this->country_name)) {
             $error['errorFlag'] = true;
@@ -60,13 +60,13 @@ class AddressBook extends Signup
         return $error;
     }
     /**
-    * Add new contacts
+    * Adds new contacts
     */
     public function addAddress($user_id)
     {
         $this->db = new Database();
         $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        $sql = "SELECT user_id from users where email_id = '".$user_id."'";
+        $sql = "SELECT user_id from users where email_id = '" . $user_id . "'";
         $userid = mysqli_query($this->db, $sql);
         $row = mysqli_fetch_row($userid);
         $add['contact_name'] = $this->contact_name;
@@ -86,7 +86,7 @@ class AddressBook extends Signup
     {    
         $this->db = new Database();
         $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        $sql = "SELECT user_id from users where email_id = '".$user_id."'";
+        $sql = "SELECT user_id from users where email_id = '" . $user_id . "'";
         $userid = mysqli_query($this->db, $sql);
         $row = mysqli_fetch_row($userid);   
         $add['contact_name'] = $this->contact_name;
@@ -102,12 +102,14 @@ class AddressBook extends Signup
     */   
     public function editAddress()
     {
-        $this->update = array ('contact_name' => $_POST['contact_name'],'contact_address' => $_POST['contact_address'],
-            'contact_phone_no' => $_POST['contact_phone_no']);
+        $this->update = array ('contact_name' => $_POST['contact_name'],
+        'contact_address' => $_POST['contact_address'],
+        'contact_phone_no' => $_POST['contact_phone_no']);
         $id = $_GET['id'];
-        $result = $this->db->update('contacts', $this->update, 'contact_id = ' . $id);
+        $result = $this->db->update('contacts', $this->update, 
+            'contact_id = ' . $id);
 
-         return $result;
+        return $result;
     }
     /**
     * Delete the contact
@@ -115,6 +117,7 @@ class AddressBook extends Signup
     public function deleteAddress()
     {
         $id = $_GET['id'];
+        
         return $this->db->delete('contacts', 'contact_id = ' . $id);
     }
 }

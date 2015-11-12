@@ -18,8 +18,10 @@ class Database
         $sql = "INSERT INTO $tableName ($column) VALUES ($value)"; 
         $result = mysqli_query($this->db, $sql); 
         if ($result) {
+
             return true;
         } else {
+
             return false;
         }
     }     
@@ -51,13 +53,13 @@ class Database
     {     
         $i = 0;
         foreach ($set_val_cols as $key=>$value) {
-            $set[$i] = $key." = '" . $value . "'";
+            $set[$i] = $key . " = '" . $value . "'";
             $i++;
         }
-        $Stset = implode(", ",$set);
+        $Stset = implode(", ", $set);
         $sql = "UPDATE $tableName SET $Stset WHERE $where";
         $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        if ($result = mysqli_query($this->db, $sql) === TRUE) {
+        if ($result = mysqli_query($this->db, $sql) === true) {
             if (mysqli_affected_rows($this->db)) {
             } else {
                 echo "Contact does not exist<br>";

@@ -23,10 +23,6 @@ h1
 #section
 {
     height: 80%;
-    /*float : right;
-    color: white;
-    background-color: #f1f1f1;
-    padding : 15px;*/
 }
 a 
 {
@@ -103,7 +99,7 @@ th
 }
 span 
 {
-    color:red;
+    color:#A11409;
 }
 table, th, td {
     border-collapse: collapse;
